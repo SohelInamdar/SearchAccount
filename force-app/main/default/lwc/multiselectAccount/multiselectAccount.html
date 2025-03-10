@@ -2,9 +2,14 @@
     <lightning-card title="Multiselect Accounts" icon-name="action:new_note">
         <lightning-layout class="slds-p-around_small">
             <lightning-layout-item size="8">
-                <lightning-input label="Account" name="account" onchange={onChangeHandler} placeholder="Select Account" value={accList}></lightning-input>
+                <lightning-input label="Account" name="account" onchange={onChangeHandler} placeholder="Select Account"></lightning-input>
             </lightning-layout-item>
+            
         </lightning-layout>
+        <lightning-layout class="slds-p-around_small">
+            <lightning-button variant="brand" onclick={buttonClickHandler} title="Search" label="Search" ></lightning-button>
+        </lightning-layout>
+
     </lightning-card>
 </template>
    

@@ -1,8 +1,8 @@
 public  class FindAccount {
-    @AuraEnabled
-    public static List<Account> findAccountsMethod(String value) {
-
-        List<Account> accList = [select id,name from Account where name like '%value%'];
+    @AuraEnabled(cacheable=true)
+    public static List<Account> findAccountsMethod() {
+        // String val = '%' + value + '%';
+        List<Account> accList = [select id,name from Account limit 5];
         System.debug(accList);
         return accList;
     }
