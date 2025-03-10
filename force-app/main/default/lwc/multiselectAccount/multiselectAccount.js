@@ -1,5 +1,5 @@
 import { LightningElement, track } from 'lwc';
-import findAccountsMethod from '@salesforce/apex/findAccounts.findAccountsMethod';
+import FindAccounts from '@salesforce/apex/FindAccount.FindAccountMethod';
 
 export default class MultiselectAccount extends LightningElement {
     @track accList = [];
@@ -10,9 +10,9 @@ export default class MultiselectAccount extends LightningElement {
     }
 
     buttonClickHandler(event){
-        findAccountsMethod().then(res =>{
+        FindAccounts({inpVal: this.inputValue}).then(res =>{
             this.accList = res;
-            console.log('json: ',res);
+            console.log('json: ',this.accList);
         })
         .catch(error=>{
             console.log(error);
